@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * swap_elements - Swaps two integers in an array and prints the array.
  * @array: The full array to be printed after swap.
@@ -10,7 +11,7 @@ void swap_elements(int *array, size_t size, int *a, int *b)
 {
 	int tmp;
 
-	if (*a != *b)
+	if (a != b)
 	{
 		tmp = *a;
 		*a = *b;
@@ -60,7 +61,6 @@ void quick_recursion(int *array, size_t size, int low, int high)
 	if (low < high)
 	{
 		p_idx = lomuto_partition(array, size, low, high);
-
 		quick_recursion(array, size, low, p_idx - 1);
 		quick_recursion(array, size, p_idx + 1, high);
 	}
